@@ -1,4 +1,4 @@
-package br.com.unitcorp.sistemavetoraedes;
+package br.com.unitcorp.sistemavetoraedes.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import database.DaoUsuario;
-import model.Usuario;
+import br.com.unitcorp.sistemavetoraedes.R;
+import br.com.unitcorp.sistemavetoraedes.database.DaoUsuario;
+import br.com.unitcorp.sistemavetoraedes.model.Usuario;
+
 
 public class Login extends AppCompatActivity {
 
@@ -43,7 +45,7 @@ public class Login extends AppCompatActivity {
                     if (usuario == null) {
                         Toast.makeText(getBaseContext(), "Usuário/Senha inválido", Toast.LENGTH_LONG).show();
                     } else {
-                        Intent intent = new Intent(getBaseContext(), Principal.class);
+                        Intent intent = new Intent(getBaseContext(), Boletim.class);
                         startActivity(intent);
                     }
                 }
