@@ -68,7 +68,11 @@ public class DaoRua {
         List<Rua> lista = new ArrayList<Rua>();
         DataBaseHelper.initializeInstance(this.context);
         SQLiteDatabase db = DataBaseHelper.getInstance().openDatabase();
-        Cursor cursor = db.rawQuery("SELECT _id, nome, idBairro FROM rua where idBairro = ? ", new String[]{idBairro + ""});
+        Cursor cursor = db.rawQuery(" SELECT r._id, r.nome, idQuadra" +
+                " FROM rua r" +
+                " join quadra q on r.idQuadra = q._id" +
+                " join bairro b on b._id = q.idBairro" +
+                " where b._id = ? ", new String[]{idBairro + ""});
         cursor.moveToFirst();
 
         for (int i = 0; i < cursor.getCount(); i++) {
