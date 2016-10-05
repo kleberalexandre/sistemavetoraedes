@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setTitle("Agenda");
+        setTitle("Boletim Vetor Aedes");
 
         edLogin = (EditText) findViewById(R.id.edLogin);
         edSenha = (EditText) findViewById(R.id.edSenha);
