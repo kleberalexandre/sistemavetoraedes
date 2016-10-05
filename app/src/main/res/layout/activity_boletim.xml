@@ -39,10 +39,52 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkPsf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.89"
+                android:text="PSF" />
+
+            <CheckBox
+                android:id="@+id/checkRotina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rotina" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkPendencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.65"
+                android:text="Pendência" />
+
+            <CheckBox
+                android:id="@+id/checkDemanda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.97"
+                android:text="Demanda" />
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/btProximo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="PRÓXIMA PÁGINA" />
+
     </LinearLayout>
 </RelativeLayout>

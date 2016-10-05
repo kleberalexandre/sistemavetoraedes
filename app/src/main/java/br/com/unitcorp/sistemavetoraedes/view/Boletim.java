@@ -9,17 +9,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.List;
 
 import br.com.unitcorp.sistemavetoraedes.R;
 import br.com.unitcorp.sistemavetoraedes.database.DaoBairro;
 import br.com.unitcorp.sistemavetoraedes.database.DaoRua;
-import br.com.unitcorp.sistemavetoraedes.database.DaoUsuario;
 import br.com.unitcorp.sistemavetoraedes.model.Bairro;
 import br.com.unitcorp.sistemavetoraedes.model.Rua;
-import br.com.unitcorp.sistemavetoraedes.model.Usuario;
 
 public class Boletim extends AppCompatActivity {
 
@@ -51,6 +48,14 @@ public class Boletim extends AppCompatActivity {
     public void buscarRuas() {
         final Context context = getBaseContext();
         spBairro.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            {
+                public void onClick (View v){
+                Intent it = new Intent(MainActivity.this, NovaTela.class);
+                startActivity(it);
+            }
+            }
+
+            btProximo.setOnClickListener(new View.OnClickListener()
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Bairro b = (Bairro) spBairro.getItemAtPosition(i);
@@ -62,29 +67,15 @@ public class Boletim extends AppCompatActivity {
                 spRua.setAdapter(ruaArrayAdapter);
             }
 
-            public void botaoEntrar() {
-                btEntrar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //////////////////
-                        if (edLogin.getText().toString().trim().equals("") || edSenha.getText().toString().trim().equals("")) {
-                            Toast.makeText(getBaseContext(), "Usuário/Senha inválido", Toast.LENGTH_LONG).show();
-                        } else {
-                            DaoUsuario daoUsuario = new DaoUsuario(getBaseContext());
-                            Usuario usuario = daoUsuario.getUsuarioByLoginSenha(edLogin.getText().toString(), edSenha.getText().toString());
-                            if (usuario == null) {
-                                Toast.makeText(getBaseContext(), "Usuário/Senha inválido", Toast.LENGTH_LONG).show();
-                            } else {
-                                Intent intent = new Intent(getBaseContext(), boletim_informcoes.class);
-                                startActivity(intent);
-                            }
+            )
 
 
+            // @Override
+            //public void onNothingSelected(AdapterView<?> adapterView) {
+            //}
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-                        })
 
-                    }
+        });
+
+    }
 }
