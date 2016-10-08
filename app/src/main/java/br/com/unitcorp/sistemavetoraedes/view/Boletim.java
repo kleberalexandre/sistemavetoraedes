@@ -66,7 +66,7 @@ public class Boletim extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
 
-
+           // fazer botao aqui
         });*/
 
     }
