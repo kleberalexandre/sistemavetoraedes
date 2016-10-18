@@ -15,7 +15,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/textView"
@@ -39,46 +40,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <LinearLayout
+        <TextView
+            android:text="Tipo de Amostragem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:id="@+id/textView10" />
 
-            <CheckBox
-                android:id="@+id/checkPsf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.89"
-                android:text="PSF" />
-
-            <CheckBox
-                android:id="@+id/checkRotina"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Rotina" />
-        </LinearLayout>
-
-        <LinearLayout
+        <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.09"
+            android:id="@+id/gprbTipoAmostragem">
 
-            <CheckBox
+            <RadioButton
+                android:text="Pendência"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/checkPendencia"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Demanda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.65"
-                android:text="Pendência" />
-
-            <CheckBox
                 android:id="@+id/checkDemanda"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="PSF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.97"
-                android:text="Demanda" />
+                android:id="@+id/checkPsf"
+                android:layout_weight="1" />
 
-        </LinearLayout>
+            <RadioButton
+                android:text="Rotina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkRotina"
+                android:layout_weight="1" />
+
+        </RadioGroup>
 
         <LinearLayout
             android:layout_width="match_parent"

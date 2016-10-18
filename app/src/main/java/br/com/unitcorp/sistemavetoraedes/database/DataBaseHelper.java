@@ -51,7 +51,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE bairro (_id INTEGER PRIMARY KEY," +
                 " nome VARCHAR(50));");
 
-
         db.execSQL("CREATE TABLE quadra (_id INTEGER PRIMARY KEY," +
                 " nome VARCHAR(50), " +
                 "idbairro int);");
@@ -69,6 +68,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE recipienteEnc (_id INTEGER PRIMARY KEY," +
                 " nome VARCHAR(50) );");
 
+        //Crie aqui o código para criar a tabela de visita
+
+
+
         db.execSQL("insert into usuario (nome, login, senha) values ('Admin','admin','123');");
 
         db.execSQL("insert into bairro (_id,nome) values (1,'Bom Pastor');");
@@ -80,15 +83,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("insert into rua (nome,idquadra) values ('Terra Roxa',1);");
         db.execSQL("insert into rua (nome, idquadra) values ('Sao Bento ',2);");
 
-        db.execSQL("insert into Atividade (nome,idatividade) values ('Ponto Estratégico',1);");
-        db.execSQL("insert into Atividade (nome,idatividade) values ('Pesquisa de Armadilhas',2);");
+        db.execSQL("insert into atividade (nome, _id) values ('Ponto Estratégico',1);");
+        db.execSQL("insert into atividade (nome,_id) values ('Pesquisa de Armadilhas',2);");
 
-        db.execSQL("insert into RecipienteEnc (nome,idrecipienteEnc) values ('Pneus',1);");
-        db.execSQL("insert into RecipienteEnc (nome,idrecipienteEnc) values ('Lata-Frascos-Plásticos ',2);");
+        db.execSQL("insert into recipienteEnc (nome,_id) values ('Pneus',1);");
+        db.execSQL("insert into recipienteEnc (nome,_id) values ('Lata-Frascos-Plásticos ',2);");
 
 
-        db.execSQL("insert into SituacaoImovel (nome,idsituacaoImovel) values ('Fechado',1);");
-        db.execSQL("insert into SituacaoImovel (nome,idsituacaoImovel) values ('Desocupado',2);");
+        db.execSQL("insert into situacaoImovel (nome,_id) values ('Fechado',1);");
+        db.execSQL("insert into situacaoImovel (nome,_id) values ('Desocupado',2);");
+
+
 
     }
 

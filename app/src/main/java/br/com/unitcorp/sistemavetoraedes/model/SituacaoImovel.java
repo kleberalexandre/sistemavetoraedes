@@ -5,10 +5,9 @@ package br.com.unitcorp.sistemavetoraedes.model;
  */
 
 public class SituacaoImovel {
-
-
     private int id;
     private String nome;
+
 
     public int getId() {
         return id;
@@ -29,7 +28,7 @@ public class SituacaoImovel {
     @Override
     public String toString() {
         return nome;
-
     }
 }
+
 
