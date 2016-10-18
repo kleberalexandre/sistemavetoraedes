@@ -70,6 +70,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         //Crie aqui o código para criar a tabela de visita
 
+        db.execSQL("CREATE TABLE usuario (_id INTEGER PRIMARY KEY," +
+                " codRua VARCHAR(50), " +
+                " numero VARCHAR(50)," +
+                " codResponsavel VARCHAR(50)," +
+                " codSituacaoImovel VARCHAR(50)," +
+                " codAgente VARCHAR(50)," +
+                " numero VARCHAR(50)," +
+                " codTipoVisita VARCHAR(50));");
 
 
         db.execSQL("insert into usuario (nome, login, senha) values ('Admin','admin','123');");
